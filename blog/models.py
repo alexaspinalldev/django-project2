@@ -18,7 +18,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-class Comments (models.Model):
+class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="post_comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_comments")
     body = models.TextField()

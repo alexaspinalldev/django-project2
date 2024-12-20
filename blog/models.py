@@ -18,10 +18,9 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-# class Cheese (models.Model):
-#     name = models.CharField(max_length=200, unique=True)
-#     stink = models.IntegerField(
-#         validators=[
-#             MaxValueValidator(100),
-#             MinValueValidator(1)
-#         ])
+class Comments (models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="post_comments")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_comments")
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)

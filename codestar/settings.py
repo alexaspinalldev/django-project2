@@ -31,7 +31,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-alexaspinal-djangoproje-i8zurqax743.ws.codeinstitute-ide.net',
-    '.herokuapp.com'
+    '.herokuapp.com',
+    '8080-alexaspinal-djangoproje-i8zurqax743.ws.codeinstitute-ide.net'
 ]
 
 
